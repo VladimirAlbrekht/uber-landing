@@ -1,0 +1,593 @@
+/* --------HEADER.РАЗДЕЛ 1.--------- */
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.header {
+  position: relative;
+  nav {
+    background-color: #212121;
+    width: 100%;
+    height: 53px;
+    position: fixed;
+    z-index: 5;
+  }
+  &__menu {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1024px;
+    height: 53px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    width: 100%;
+    margin: 0 auto;
+    opacity: 1;
+  }
+  &__menu_item {
+    list-style: none;
+    padding-right: 3%;
+    text-align: left;
+    border-right: 2px dotted black;
+    opacity: 1;
+    &:last-child {
+      border-right: none;
+    }
+  }
+  &__menu_link {
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 15px;
+    color: #ffffff;
+    opacity: 1;
+    &:active {
+      color: $PrimaryColor;
+    }
+    &:hover {
+      color: $PrimaryColor;
+      transition: 0.2s all;
+    }
+  }
+  &__subheader {
+    background: rgba(0, 0, 0, 0.6);
+    mix-blend-mode: normal;
+    height: 87px;
+    padding: 19px;
+    position: absolute;
+    top: 53px;
+    width: 100%;
+    &_wrapper {
+      max-width: 940px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+    }
+    &_content {
+      display: flex;
+      margin-right: 25px;
+    }
+    &_text {
+      color: #ffffff;
+      opacity: 0.6;
+      font-size: 13px;
+    }
+    &_logo {
+      margin-left: 0;
+    }
+    &_call {
+      font-weight: 300;
+      font-size: 12px;
+      line-height: 14px;
+      color: #ffffff;
+      text-align: right;
+      margin-right: 18px;
+
+      p {
+        font-weight: 100;
+        font-size: 13px;
+        color: #ffffff;
+        margin-bottom: 12px;
+      }
+    }
+    &_phone-number {
+      display: block;
+      font-size: 22px;
+      color: #ffffff;
+      text-align: right;
+    }
+    &_button {
+      @include button();
+    }
+  }
+}
+
+.label {
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+  width: 112px;
+  height: 24px;
+  background-color: #000000;
+  padding: 5px 12px;
+  margin: 0 auto 33px;
+}
+
+/* --------PROMO.РАЗДЕЛ 2.--------- */
+
+.promo {
+  background: url(../img/uber_bg.png) center (center/ cover) no-repeat;
+  min-height: 100%;
+  text-align: center;
+  padding: 230px 20px 160px;
+  width: 100%;
+  &_content {
+    max-width: 995px;
+    padding: 0 10px;
+    margin: 0 auto;
+  }
+  &_title {
+    display: inline-block;
+    font-family: "Roboto";
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0px;
+    color: #ffffff;
+    margin-bottom: 16px;
+  }
+  &_subtitle {
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: 0px;
+    color: #ffffff;
+  }
+  &_discription {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;
+    color: #ffffff;
+    margin-bottom: 116px;
+  }
+  &_button {
+    @include button();
+  }
+}
+
+/* --------REASONS.РАЗДЕЛ 3.--------- */
+
+.reasons {
+  margin: 0 auto;
+  padding: 56px 0 61px 0;
+
+  &_title {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 48px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  &_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    column-gap: 20px;
+    padding: 0 38px 0 38px;
+  }
+  &__item {
+    max-width: 512px;
+    display: flex;
+  }
+  &__item_image {
+    content: "";
+    border-radius: 50%;
+    min-width: 116px;
+    height: 116px;
+    background-color: $PrimaryColor;
+    position: relative;
+    margin-right: 25px;
+    z-index: -1;
+
+    img {
+      position: absolute;
+      margin: auto;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+    }
+  }
+  &__item_content {
+    h3 {
+      font-size: 17px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 21px;
+      letter-spacing: 0px;
+
+      color: $PrimaryColor;
+    }
+  }
+}
+
+/* --------MOBILE.РАЗДЕЛ 4.--------- */
+
+.mobile {
+  background: url("../img/mobile_bg.png") center (center/ cover) no-repeat;
+  min-height: 864px;
+  width: 100%;
+  padding: 48px 10px 80px 10px;
+
+  &__title {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 48px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  &__subtitle {
+    @include subtitle();
+    margin-bottom: 30px;
+  }
+  &__wrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 20px;
+    padding: 0 22px;
+  }
+  &_item {
+    margin: 0 auto;
+    max-width: 320px;
+    height: 280px;
+    width: 100%;
+    margin-bottom: 19px;
+    padding: 82px 11px 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &_item_subtitle {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 31px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  &_item_plus {
+    width: 26px;
+    height: 26px;
+    background-color: #000000;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:before {
+      content: "";
+      width: 14px;
+      height: 2px;
+      background-color: $PrimaryColor;
+      position: absolute;
+      transition: 0.2s all;
+    }
+    &:after {
+      content: "";
+      width: 2px;
+      height: 14px;
+      background-color: $PrimaryColor;
+      transition: 0.2s all;
+    }
+    &:hover {
+      &:after,
+      &:before {
+        background-color: $SecondaryColor;
+      }
+    }
+  }
+  &_item-1 {
+    background: url("../img/mobile-uber-1.png") center (center/ cover) no-repeat;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 320px;
+  }
+  &_item-2 {
+    background: url("../img/mobile-uber-2.png") center (center/ cover) no-repeat;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 320px;
+  }
+  &_item-3 {
+    background: url("../img/mobile-uber-3.png") center (center/ cover) no-repeat;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 320px;
+  }
+  &_item-4 {
+    background: url("../img/mobile-uber-4.png") center (center/ cover) no-repeat;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 320px;
+  }
+  &_item-5 {
+    background: url("../img/mobile-uber-5.png") center (center/ cover) no-repeat;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 320px;
+  }
+  &_item-6 {
+    background: url("../img/mobile-uber-6.png") center (center/ cover) no-repeat;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+.label-light {
+  background-color: white;
+  color: hsl(240, 52%, 6%);
+  padding: 6px 0;
+}
+
+/* --------CHOICE.РАЗДЕЛ 4.--------- */
+
+.choice {
+  background: url("../img/choice.png") center (center/ cover) no-repeat;
+  &_car {
+    margin: 0 auto;
+    padding-top: 57px;
+    padding-bottom: 142px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &_title {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 48px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+  &_subtitle {
+    @include subtitle();
+    color: #ffffff;
+    margin-bottom: 54px;
+  }
+  &_discription {
+    color: #222222;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: center;
+  }
+  img {
+    display: inline-block;
+    max-width: 760px;
+    width: 100%;
+  }
+}
+
+/* --------REQUIRE.РАЗДЕЛ 4.--------- */
+
+.require {
+  padding: 68px 0 34px 0;
+
+  &__title {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 48px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 33px;
+  }
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  &__item {
+    margin-bottom: 60px;
+    padding-right: 80px;
+  }
+  &_subtitle {
+    color: $PrimaryColor;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 13px;
+  }
+  &_list {
+    color: #222222;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 24px;
+    padding-left: 10px;
+    li {
+      margin-bottom: 8px;
+      position: relative;
+      margin-left: 36px;
+    }
+
+    li:before {
+      content: url(../img/icons/check_blue.png);
+      display: inline-block;
+      vertical-align: middle;
+      position: absolute;
+      top: 2px;
+      left: -32px;
+      z-index: -1;
+    }
+  }
+  &_info {
+    color: $PrimaryColor;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 24px;
+  }
+  &_subtitle-red {
+    color: $SecondaryColor;
+  }
+  &__list-red {
+    li:before {
+      content: url(../img/icons/check_red.png);
+      display: inline-block;
+      vertical-align: middle;
+      position: absolute;
+      top: 2px;
+      left: -32px;
+      z-index: -1;
+    }
+  }
+}
+
+/* --------LOCATION.РАЗДЕЛ 4.--------- */
+
+.location {
+  background: url("../img/world-bg.png") center (center/ cover) no-repeat;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 48px 10px 48px 10px;
+    min-height: 716px;
+  }
+  &__title {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 48px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+  &__subtitle {
+    @include subtitle();
+    color: #ffffff;
+  }
+  &__link {
+    a {
+      color: $PrimaryColor;
+      font-size: 15px;
+      font-weight: 400;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+  }
+}
+
+/* --------FOOTER.РАЗДЕЛ 4.--------- */
+
+.footer {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    justify-items: center;
+    padding: 14px 21px 14px 25px;
+  }
+  &__social {
+    display: flex;
+    justify-self: start;
+    align-self: center;
+  }
+  &__social_link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+    content: "";
+    width: 32px;
+    height: 32px;
+    background-color: #070716;
+    border-radius: 50%;
+    span {
+      color: #ffffff;
+    }
+  }
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__line {
+    width: 299px;
+    height: 4px;
+    background-color: $PrimaryColor;
+    margin-bottom: 32px;
+  }
+  &__upper-nav {
+    display: flex;
+    justify-content: center;
+
+    li {
+      margin-right: 48px;
+      &:last-child {
+        margin-right: 0;
+      }
+
+      a {
+        color: #070716;
+        font-size: 15px;
+        font-weight: 300;
+        text-transform: uppercase;
+      }
+    }
+  }
+  &__down-nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    a {
+      color: #999999;
+      font-size: 11px;
+      font-weight: 300;
+      text-transform: uppercase;
+    }
+    li {
+      margin-right: 24px;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &__language {
+    color: #1fbad6;
+    font-size: 11px;
+    text-transform: uppercase;
+  }
+  &__store {
+    display: flex;
+    justify-self: end;
+    align-self: center;
+  }
+  &__app-store {
+    @include store-btn();
+    margin-right: 7px;
+    content: url(../img/app-store.png);
+    size: 100%;
+    object-fit: cover;
+  }
+  &__google-store {
+    @include store-btn();
+    margin-right: 7px;
+    content: url(../img/google-play.png);
+    size: 100%;
+    object-fit: cover;
+  }
+  &__windows-store {
+    @include store-btn();
+    content: url(../img/windows-store-1.png);
+    size: 100%;
+    object-fit: cover;
+  }
+}
